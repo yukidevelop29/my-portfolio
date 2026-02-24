@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const isProd = process.env.NODE_ENV === "production";
-const repoName = "your-repo-name"; // リポジトリ名をここに記入
+const repoName = "my-portfolio"; // リポジトリ名をここに記入
 
 const nextConfig: NextConfig = {
   // 1. 静的書き出し（output: 'export'）の設定
