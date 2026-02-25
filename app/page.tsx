@@ -79,6 +79,18 @@ export default function Home() {
         </div>
       </main>
 
+      <div
+        className="fixed inset-0 bg-black/70 flex items-center justify-center p-4"
+        onClick={() => setSelectedProject(null)} // 背景クリックで閉じる
+      >
+        <div
+          className="bg-white ..."
+          onClick={(e) => e.stopPropagation()} // 中身のクリックは親に伝えない
+        >
+          {/* コンテンツ */}
+        </div>
+      </div>
+
       {/* モーダル */}
       {selectedProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-70">
@@ -93,12 +105,23 @@ export default function Home() {
 
             {/* 画像カルーセルエリア */}
             <div className="relative group mb-6">
-              <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-2 rounded-lg">
+              <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-lg">
                 {selectedProject.images.map((img, index) => (
-                  <div key={index} className="flex-shrink-0 w-full snap-center">
+                  <div
+                    key={index}
+                    className="flex-shrink-0 w-full h-[400px] relative overflow-hidden snap-center"
+                  >
+                    {/* 背景：ぼかした元画像 */}
                     <img
                       src={`${process.env.NODE_ENV === "production" ? "/my-portfolio" : ""}${img}`}
-                      className="w-full h-72 object-cover rounded-lg"
+                      className="absolute inset-0 w-full h-full object-cover blur-xl opacity-30 scale-110"
+                      aria-hidden="true"
+                    />
+
+                    {/* メイン：全体を表示する画像 */}
+                    <img
+                      src={`${process.env.NODE_ENV === "production" ? "/my-portfolio" : ""}${img}`}
+                      className="relative z-10 w-full h-full object-contain"
                       alt={`${selectedProject.title} screenshot ${index + 1}`}
                     />
                   </div>
@@ -112,30 +135,53 @@ export default function Home() {
               )}
             </div>
 
-            <h2 className="text-3xl font-bold mb-2">{selectedProject.title}</h2>
-            <div className="flex gap-2 mb-4">
+            {/* タイトルセクション */}
+            <div className="mb-6">
+              <p className="text-blue-600 font-bold text-sm tracking-widest uppercase mb-1">
+                {selectedProject.category}
+              </p>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight">
+                {selectedProject.title}
+              </h2>
+            </div>
+
+            <div className="flex flex-wrap gap-2 my-4">
               {selectedProject.techStack.map((tech) => (
                 <span
                   key={tech}
-                  className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                  className="bg-slate-800 text-white text-[10px] px-2.5 py-0.5 rounded-full font-medium"
                 >
                   {tech}
                 </span>
               ))}
             </div>
 
-            <p className="text-gray-700 mb-6">{selectedProject.description}</p>
+            {/* 説明文セクション */}
+            <div className="space-y-4 text-gray-700 leading-relaxed">
+              <h3 className="text-lg font-bold text-gray-800 border-l-4 border-blue-600 pl-3">
+                作品概要
+              </h3>
+              <p className="text-base md:text-lg">
+                {selectedProject.description}
+              </p>
+            </div>
 
-            <h3 className="font-bold border-b pb-2 mb-4">
-              こだわり・苦労したポイント
-            </h3>
-            <ul className="list-disc pl-5 space-y-2 mb-8">
-              {selectedProject.points.map((point, i) => (
-                <li key={i} className="text-gray-600 text-sm">
-                  {point}
-                </li>
-              ))}
-            </ul>
+            {/* こだわりポイント（カード形式） */}
+            <div className="mt-8">
+              <h3 className="text-lg font-bold text-gray-800 mb-4">
+                技術的なこだわり
+              </h3>
+              <div className="grid grid-cols-1 gap-3">
+                {selectedProject.points.map((point, i) => (
+                  <div
+                    key={i}
+                    className="bg-gray-50 p-4 rounded-lg border-l-2 border-gray-300 italic text-gray-600"
+                  >
+                    “ {point} ”
+                  </div>
+                ))}
+              </div>
+            </div>
 
             <div className="flex gap-4">
               {selectedProject.github && (

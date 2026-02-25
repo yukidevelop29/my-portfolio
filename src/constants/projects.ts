@@ -45,7 +45,12 @@ export const PROJECTS: Project[] = [
       "物理演算を活用した演出",
     ],
     techStack: ["Unity", "C#"],
-    images: ["/images/projects/cyoukokuka.png"],
+    images: [
+      "/images/projects/cm_1.png",
+      "/images/projects/cm_2.png",
+      "/images/projects/cm_3.png",
+      "/images/projects/cm_4.png",
+    ],
     demo: "https://play.google.com/store/apps/details?id=com.garhijp.cyoukokukahenomichi",
   },
   {
@@ -61,7 +66,11 @@ export const PROJECTS: Project[] = [
       "没入感を高める「明かり」の表現",
     ],
     techStack: ["Unity", "C#"],
-    images: ["/images/projects/kurayamimeiro.png"],
+    images: [
+      "/images/projects/kd_1.png",
+      "/images/projects/kd_2.png",
+      "/images/projects/kd_3.png",
+    ],
     demo: "https://play.google.com/store/apps/details?id=com.garhijp.kurayamimeirokaranodassyutsu",
   },
   {
@@ -76,7 +85,12 @@ export const PROJECTS: Project[] = [
       "自由度とリプレイ性の追求",
     ],
     techStack: ["Unity", "C#"],
-    images: ["/images/projects/keidorospy.png"],
+    images: [
+      "/images/projects/kds_1.png",
+      "/images/projects/kds_2.png",
+      "/images/projects/kds_3.png",
+      "/images/projects/kds_4.png",
+    ],
     demo: "https://play.google.com/store/apps/details?id=com.garhijp.keidorospy",
   },
   {
@@ -155,7 +169,11 @@ export const PROJECTS: Project[] = [
       "「Unity1Week（お題：おくる）」にて制作した、ゲームブック風のアドベンチャーゲームです。",
     points: ["動的なシナリオ変化", "エンディングの総括", "画像生成AIの活用"],
     techStack: ["Unity", "C#"],
-    images: ["/images/projects/iseitsuushin.png"],
+    images: [
+      "/images/projects/it_1.png",
+      "/images/projects/it_2.png",
+      "/images/projects/it_3.png",
+    ],
   },
   {
     id: "capturetheflag",
@@ -170,7 +188,11 @@ export const PROJECTS: Project[] = [
       "ランキングシステムの実装",
     ],
     techStack: ["Unity", "C#", "PHP", "MySQL"],
-    images: ["/images/projects/flag.png"],
+    images: [
+      "/images/projects/flg_1.png",
+      "/images/projects/flg_2.png",
+      "/images/projects/flg_3.png",
+    ],
   },
   {
     id: "gyousyousimuration",
@@ -185,7 +207,12 @@ export const PROJECTS: Project[] = [
       "ランダムイベントの実装",
     ],
     techStack: ["Unity", "C#"],
-    images: ["/images/projects/gyousyou.png"],
+    images: [
+      "/images/projects/gs_1.png",
+      "/images/projects/gs_2.png",
+      "/images/projects/gs_3.png",
+      "/images/projects/gs_4.png",
+    ],
   },
   {
     id: "adventure",
@@ -200,7 +227,7 @@ export const PROJECTS: Project[] = [
       "レトロなインターフェースの現代化",
     ],
     techStack: ["Unity", "C#"],
-    images: ["/images/projects/adventure.png"],
+    images: ["/images/projects/adv_1.png", "/images/projects/adv_2.png"],
   },
   {
     id: "html-css-kadai",
@@ -231,7 +258,7 @@ export const PROJECTS: Project[] = [
       "徹底したマルチデバイス（レスポンシブ）対応",
     ],
     techStack: ["HTML5", "CSS3", "JavaScript"],
-    images: ["/images/projects/genkidama-hp.png"],
+    images: ["/images/projects/genki_1.png", "/images/projects/genki_2.png"],
     demo: "https://yukidevelop29.github.io/genkidama/",
   },
   {
