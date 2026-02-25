@@ -231,8 +231,23 @@ export const PROJECTS: Project[] = [
     demo: "https://yukidevelop29.github.io/genkidama/",
   },
   {
+    id: "weather-app",
+    title: "天気予報アプリ",
+    category: "Web",
+    tags: ["React", "Next.js", "OpenWeatherMap"],
+    description:
+      "外部APIを利用し、都市名を入力することで現在の天気および5日間の天気予報を取得・表示するWebアプリケーションです。",
+    points: [
+      "再利用性と保守性を意識したコンポーネント分割",
+      "都市検索機能",
+      "5日間予報表示",
+    ],
+    techStack: ["Next.js", "Tailwind CSS"],
+    image: "/images/projects/weather.png",
+  },
+  {
     id: "todo-app",
-    title: "Full-stack ToDo App",
+    title: "ToDoアプリ",
     category: "Web",
     tags: ["React", "Next.js", "Prisma", "PostgreSQL"],
     description:
@@ -250,6 +265,5 @@ export const PROJECTS: Project[] = [
       "NextAuth.js",
     ],
     image: "/images/projects/todo.png",
-    github: "https://github.com/...",
   },
 ];
