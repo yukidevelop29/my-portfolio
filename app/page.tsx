@@ -20,7 +20,7 @@ export default function Home() {
 
         {/* タブボタン */}
         <div className="flex justify-center gap-4 mb-12">
-          {["All", "Game", "Web", "Coding"].map((cat) => (
+          {["All", "Game:元気玉", "Game:その他", "Web", "Coding"].map((cat) => (
             <button
               key={cat}
               onClick={() => setFilter(cat as any)}
