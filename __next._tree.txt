@@ -17,5 +17,6 @@
 :HL["/my-portfolio/images/projects/adventure.png","image"]
 :HL["/my-portfolio/images/projects/harikyu.png","image"]
 :HL["/my-portfolio/images/projects/genkidama-hp.png","image"]
+:HL["/my-portfolio/images/projects/weather.png","image"]
 :HL["/my-portfolio/images/projects/todo.png","image"]
-0:{"buildId":"9ntWl254ZZPlR6yJAO5l6","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"_3cgZRJ2TpjV12P2BDGuR","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
