@@ -79,58 +79,44 @@ export default function Home() {
         </div>
       </main>
 
-      <div
-        className="fixed inset-0 bg-black/70 flex items-center justify-center p-4"
-        onClick={() => setSelectedProject(null)} // 背景クリックで閉じる
-      >
-        <div
-          className="bg-white ..."
-          onClick={(e) => e.stopPropagation()} // 中身のクリックは親に伝えない
-        >
-          {/* コンテンツ */}
-        </div>
-      </div>
-
       {/* モーダル */}
       {selectedProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-70">
-          <div className="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-8 relative">
-            {/* 閉じるボタン */}
-            <button
-              onClick={() => setSelectedProject(null)}
-              className="absolute top-4 right-4 text-3xl"
-            >
-              &times;
-            </button>
-
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70"
+          onClick={() => setSelectedProject(null)}
+        >
+          <div
+            className="bg-white rounded-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-8 relative"
+            onClick={(e) => e.stopPropagation()}
+          >
             {/* 画像カルーセルエリア */}
-            <div className="relative group mb-6">
-              <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-lg">
+            <div className="relative mb-6">
+              {/* カルーセルコンテナ: justify-start で左詰めに固定 */}
+              <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-4 rounded-lg justify-start bg-gray-100">
                 {selectedProject.images.map((img, index) => (
                   <div
                     key={index}
-                    className="flex-shrink-0 w-full h-[400px] relative overflow-hidden snap-center"
+                    className="flex-shrink-0 w-full snap-start flex justify-start items-center"
                   >
-                    {/* 背景：ぼかした元画像 */}
+                    {/* object-contain で画像全体を表示。h-72などは固定せず、アスペクト比を維持 */}
                     <img
                       src={`${process.env.NODE_ENV === "production" ? "/my-portfolio" : ""}${img}`}
-                      className="absolute inset-0 w-full h-full object-cover blur-xl opacity-30 scale-110"
-                      aria-hidden="true"
-                    />
-
-                    {/* メイン：全体を表示する画像 */}
-                    <img
-                      src={`${process.env.NODE_ENV === "production" ? "/my-portfolio" : ""}${img}`}
-                      className="relative z-10 w-full h-full object-contain"
+                      className="max-w-full h-auto max-h-[400px] object-contain rounded-lg"
                       alt={`${selectedProject.title} screenshot ${index + 1}`}
                     />
                   </div>
                 ))}
               </div>
-              {/* 複数ある場合のみヒントを表示 */}
+
+              {/* 複数枚ある時のインジケーター */}
               {selectedProject.images.length > 1 && (
-                <div className="text-center mt-2 text-xs text-gray-400">
-                  ← 左右にスワイプして画像を表示 →
+                <div className="flex justify-center gap-2 mt-3">
+                  {selectedProject.images.map((_, i) => (
+                    <div
+                      key={i}
+                      className="w-2 h-2 rounded-full bg-blue-500 opacity-50"
+                    />
+                  ))}
                 </div>
               )}
             </div>
