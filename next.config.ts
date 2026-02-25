@@ -1,26 +1,17 @@
 import type { NextConfig } from "next";
 
 const isProd = process.env.NODE_ENV === "production";
-const repoName = "my-portfolio"; // リポジトリ名をここに記入
 
 const nextConfig: NextConfig = {
-  // 1. 静的書き出し（output: 'export'）の設定
   output: "export",
-
-  // 2. 本番環境（GitHub Pages）でのディレクトリパスの調整
-  // リポジトリ名が URL に含まれる場合に必要
-  basePath: isProd ? `/${repoName}` : "",
-
-  // 画像のパスなどを basePath に合わせる設定
-  assetPrefix: isProd ? `/${repoName}/` : "",
-
-  // 3. 画像最適化機能のオフ（静的書き出しではNext.jsのサーバー機能が使えないため）
+  // 本番環境のみパスを付与し、開発環境(npm run dev)では空にする
+  basePath: isProd ? "/my-portfolio" : "",
+  assetPrefix: isProd ? "/my-portfolio" : "",
   images: {
     unoptimized: true,
   },
-
-  // その他、必要に応じて
-  trailingSlash: true, // URLの末尾に / を付ける（GitHub Pagesとの相性が良い）
+  // 静的書き出し時にURLの末尾にスラッシュを付けてディレクトリ構造を安定させる
+  trailingSlash: true,
 };
 
 export default nextConfig;
