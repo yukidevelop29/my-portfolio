@@ -5,4 +5,4 @@
 :HL["/my-portfolio/images/projects/cyoukokuka.png","image"]
 :HL["/my-portfolio/images/projects/genkidama-hp.png","image"]
 :HL["/my-portfolio/images/projects/todo.png","image"]
-0:{"buildId":"-oRmT5L_8LpTG3XQRKj4l","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"a8ZWKJ4rCdBJeLg8wRfDR","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
