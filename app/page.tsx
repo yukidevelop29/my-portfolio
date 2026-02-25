@@ -3,9 +3,9 @@ import { useState } from "react";
 import { PROJECTS, Project } from "@/src/constants/projects";
 
 export default function Home() {
-  const [filter, setFilter] = useState<"All" | "Game" | "Web" | "Coding">(
-    "All",
-  );
+  const [filter, setFilter] = useState<
+    "All" | "Game:元気玉" | "Game:その他" | "Web" | "Coding"
+  >("All");
 
   // フィルタリング処理
   const filteredProjects =
@@ -15,7 +15,6 @@ export default function Home() {
 
   return (
     <>
-      <title>ポートフォリオ</title>
       <main className="container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold mb-12 text-center">Portfolio</h1>
 
@@ -96,7 +95,7 @@ export default function Home() {
                 {selectedProject.images.map((img, index) => (
                   <div
                     key={index}
-                    className="flex-shrink-0 w-full snap-start flex justify-start items-center"
+                    className="flex-shrink-0 max-w-full snap-start"
                   >
                     {/* object-contain で画像全体を表示。h-72などは固定せず、アスペクト比を維持 */}
                     <img
@@ -148,7 +147,7 @@ export default function Home() {
                 作品概要
               </h3>
               <p className="text-base md:text-lg">
-                {selectedProject.description}
+                {selectedProject.longDescription}
               </p>
             </div>
 
