@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { PROJECTS, Project } from "@/src/constants/projects";
 
@@ -14,6 +15,7 @@ export default function Home() {
 
   return (
     <>
+      <title>ポートフォリオ</title>
       <main className="container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold mb-12 text-center">Portfolio</h1>
 
@@ -46,7 +48,7 @@ export default function Home() {
               <div className="relative h-48 bg-gray-200">
                 {/* Imageコンポーネントを使う場合は basePath を意識 */}
                 <img
-                  src={`${process.env.NODE_ENV === "production" ? "/my-portfolio" : ""}${project.image}`}
+                  src={`${process.env.NODE_ENV === "production" ? "/my-portfolio" : ""}${project.images[0]}`}
                   alt={project.title}
                   className="w-full h-full object-cover"
                 />
@@ -89,10 +91,26 @@ export default function Home() {
               &times;
             </button>
 
-            <img
-              src={`${process.env.NODE_ENV === "production" ? "/my-portfolio" : ""}${selectedProject.image}`}
-              className="w-full h-64 object-cover rounded-lg mb-6"
-            />
+            {/* 画像カルーセルエリア */}
+            <div className="relative group mb-6">
+              <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-2 rounded-lg">
+                {selectedProject.images.map((img, index) => (
+                  <div key={index} className="flex-shrink-0 w-full snap-center">
+                    <img
+                      src={`${process.env.NODE_ENV === "production" ? "/my-portfolio" : ""}${img}`}
+                      className="w-full h-72 object-cover rounded-lg"
+                      alt={`${selectedProject.title} screenshot ${index + 1}`}
+                    />
+                  </div>
+                ))}
+              </div>
+              {/* 複数ある場合のみヒントを表示 */}
+              {selectedProject.images.length > 1 && (
+                <div className="text-center mt-2 text-xs text-gray-400">
+                  ← 左右にスワイプして画像を表示 →
+                </div>
+              )}
+            </div>
 
             <h2 className="text-3xl font-bold mb-2">{selectedProject.title}</h2>
             <div className="flex gap-2 mb-4">
@@ -135,7 +153,7 @@ export default function Home() {
                   target="_blank"
                   className="bg-blue-600 text-white px-6 py-2 rounded-lg"
                 >
-                  Demo
+                  Link
                 </a>
               )}
             </div>

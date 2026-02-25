@@ -6,7 +6,7 @@ export interface Project {
   description: string;
   points: string[]; // こだわりポイント
   techStack: string[];
-  image: string; // サムネイル画像パス
+  images: string[]; // サムネイル画像パス
   github?: string; // GitHubリンク（任意）
   demo?: string; // デモサイトリンク（任意）
 }
@@ -25,7 +25,11 @@ export const PROJECTS: Project[] = [
       "展開のメリハリ",
     ],
     techStack: ["Unity", "C#"],
-    image: "/images/projects/meteoritebuster.png",
+    images: [
+      "/images/projects/mb_1.png",
+      "/images/projects/mb_2.png",
+      "/images/projects/mb_3.png",
+    ],
     demo: "https://play.google.com/store/apps/details?id=com.garhijp.meteoritebuster",
   },
   {
@@ -41,7 +45,7 @@ export const PROJECTS: Project[] = [
       "物理演算を活用した演出",
     ],
     techStack: ["Unity", "C#"],
-    image: "/images/projects/cyoukokuka.png",
+    images: ["/images/projects/cyoukokuka.png"],
     demo: "https://play.google.com/store/apps/details?id=com.garhijp.cyoukokukahenomichi",
   },
   {
@@ -57,7 +61,7 @@ export const PROJECTS: Project[] = [
       "没入感を高める「明かり」の表現",
     ],
     techStack: ["Unity", "C#"],
-    image: "/images/projects/kurayamimeiro.png",
+    images: ["/images/projects/kurayamimeiro.png"],
     demo: "https://play.google.com/store/apps/details?id=com.garhijp.kurayamimeirokaranodassyutsu",
   },
   {
@@ -72,7 +76,7 @@ export const PROJECTS: Project[] = [
       "自由度とリプレイ性の追求",
     ],
     techStack: ["Unity", "C#"],
-    image: "/images/projects/keidorospy.png",
+    images: ["/images/projects/keidorospy.png"],
     demo: "https://play.google.com/store/apps/details?id=com.garhijp.keidorospy",
   },
   {
@@ -83,7 +87,7 @@ export const PROJECTS: Project[] = [
     description: "シンプルなモグラ叩きゲームです。",
     points: [],
     techStack: ["Unity", "C#"],
-    image: "/images/projects/shimaenaga.png",
+    images: ["/images/projects/shimaenaga.png"],
     demo: "https://play.google.com/store/apps/details?id=com.garhijp.shimaenagatohiyoko",
   },
   {
@@ -95,7 +99,7 @@ export const PROJECTS: Project[] = [
       "サイコロの出目で戦うゲームです。アイテムを使用することでダメージを増減させたり、回復したりできます。",
     points: [],
     techStack: ["Unity", "C#"],
-    image: "/images/projects/korokoro.png",
+    images: ["/images/projects/korokoro.png"],
     demo: "https://play.google.com/store/apps/details?id=com.garhijp.korokorosaikorobattle",
   },
   {
@@ -106,7 +110,7 @@ export const PROJECTS: Project[] = [
     description: "降ってくるお菓子をキャッチしてハイスコアを競うゲームです。",
     points: [],
     techStack: ["Unity", "C#"],
-    image: "/images/projects/mochimaki.png",
+    images: ["/images/projects/mochimaki.png"],
     demo: "https://play.google.com/store/apps/details?id=com.garhijp.joutoumochimakicatch",
   },
   {
@@ -117,7 +121,7 @@ export const PROJECTS: Project[] = [
     description: "じゃんけんで勝った方の手を瞬時に選択し続けるゲームです。",
     points: [],
     techStack: ["Unity", "C#"],
-    image: "/images/projects/jankenshinpan.png",
+    images: ["/images/projects/jankenshinpan.png"],
     demo: "https://play.google.com/store/apps/details?id=com.garhijp.docchigacooljankenshinpan",
   },
   {
@@ -128,7 +132,7 @@ export const PROJECTS: Project[] = [
     description: "選択肢から適切なセリフを選び、上手に褒めてあげるゲームです。",
     points: [],
     techStack: ["Unity", "C#"],
-    image: "/images/projects/jouzunihomeyou.png",
+    images: ["/images/projects/jouzunihomeyou.png"],
     demo: "https://play.google.com/store/apps/details?id=com.garhijp.jouzunihomeyou",
   },
   {
@@ -137,9 +141,9 @@ export const PROJECTS: Project[] = [
     category: "Game",
     tags: ["Unity", "C#", "元気玉"],
     description: "タイミングを計ってたこ焼きをひっくり返すゲームです。",
-    points: [],
+    points: ["パーティクルを使用した湯気の表現"],
     techStack: ["Unity", "C#"],
-    image: "/images/projects/takoyaki.png",
+    images: ["/images/projects/takoyaki.png"],
     demo: "https://play.google.com/store/apps/details?id=com.garhijp.takoyakitsukurou",
   },
   {
@@ -151,7 +155,7 @@ export const PROJECTS: Project[] = [
       "「Unity1Week（お題：おくる）」にて制作した、ゲームブック風のアドベンチャーゲームです。",
     points: ["動的なシナリオ変化", "エンディングの総括", "画像生成AIの活用"],
     techStack: ["Unity", "C#"],
-    image: "/images/projects/iseitsuushin.png",
+    images: ["/images/projects/iseitsuushin.png"],
   },
   {
     id: "capturetheflag",
@@ -166,7 +170,7 @@ export const PROJECTS: Project[] = [
       "ランキングシステムの実装",
     ],
     techStack: ["Unity", "C#", "PHP", "MySQL"],
-    image: "/images/projects/flag.png",
+    images: ["/images/projects/flag.png"],
   },
   {
     id: "gyousyousimuration",
@@ -181,7 +185,7 @@ export const PROJECTS: Project[] = [
       "ランダムイベントの実装",
     ],
     techStack: ["Unity", "C#"],
-    image: "/images/projects/gyousyou.png",
+    images: ["/images/projects/gyousyou.png"],
   },
   {
     id: "adventure",
@@ -196,7 +200,7 @@ export const PROJECTS: Project[] = [
       "レトロなインターフェースの現代化",
     ],
     techStack: ["Unity", "C#"],
-    image: "/images/projects/adventure.png",
+    images: ["/images/projects/adventure.png"],
   },
   {
     id: "html-css-kadai",
@@ -211,7 +215,7 @@ export const PROJECTS: Project[] = [
       "徹底したマルチデバイス（レスポンシブ）対応",
     ],
     techStack: ["HTML5", "CSS3", "JavaScript"],
-    image: "/images/projects/harikyu.png",
+    images: ["/images/projects/harikyu.png"],
     demo: "https://yukidevelop29.github.io/harikyu/",
   },
   {
@@ -227,7 +231,7 @@ export const PROJECTS: Project[] = [
       "徹底したマルチデバイス（レスポンシブ）対応",
     ],
     techStack: ["HTML5", "CSS3", "JavaScript"],
-    image: "/images/projects/genkidama-hp.png",
+    images: ["/images/projects/genkidama-hp.png"],
     demo: "https://yukidevelop29.github.io/genkidama/",
   },
   {
@@ -243,7 +247,7 @@ export const PROJECTS: Project[] = [
       "5日間予報表示",
     ],
     techStack: ["Next.js", "Tailwind CSS"],
-    image: "/images/projects/weather.png",
+    images: ["/images/projects/weather.png"],
   },
   {
     id: "todo-app",
@@ -264,6 +268,6 @@ export const PROJECTS: Project[] = [
       "PostgreSQL",
       "NextAuth.js",
     ],
-    image: "/images/projects/todo.png",
+    images: ["/images/projects/todo.png"],
   },
 ];
